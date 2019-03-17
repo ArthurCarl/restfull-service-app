@@ -21,7 +21,7 @@ public class User implements UserDetails {
 
     private String password;
 
-    @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private List<Role> roles;
 
     private boolean accountNonExpired;
@@ -33,7 +33,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        for (Role role : roles){
+        for (Role role : roles) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
         return authorities;
@@ -41,7 +41,7 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return  password;
+        return password;
     }
 
     @Override
@@ -64,6 +64,7 @@ public class User implements UserDetails {
     public boolean isCredentialsNonExpired() {
         return credentialsNonExpired;
     }
+
     @Override
     public boolean isEnabled() {
         return enabled;

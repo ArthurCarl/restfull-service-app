@@ -6,10 +6,12 @@ spring:
     username: sa
     password: 123
     driverClassName: org.h2.Driver
+    schema: classpath:schema.sql
+    data: classpath:data.sql
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-#    hibernate:
-#      ddl-auto: update
+    hibernate:
+      ddl-auto: none
     properties:
 
       hibernate:

@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS user;
 CREATE TABLE user(ID INT PRIMARY KEY, username VARCHAR(32) unique ,
 password varchar(128),
-accountNonExpired boolean default true ,
-accountNonLocked boolean default true ,
-credentialsNonExpired boolean default true ,
+account_Non_Expired boolean default true ,
+account_Non_Locked boolean default true ,
+credentials_Non_Expired boolean default true ,
 enabled boolean default true
 );
 

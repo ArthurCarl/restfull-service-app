@@ -18,7 +18,13 @@ public class JwtAuthController {
     private AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> register (@RequestBody User addUser) throws AuthenticationException {
+    public ResponseEntity<User> register(@RequestBody User addUser) throws AuthenticationException {
         return ResponseEntity.ok(authService.register(addUser));
+    }
+
+    // 登录
+    @PostMapping("/login")
+    public ResponseEntity<String> createToken(@RequestBody User userToLogin) throws AuthenticationException {
+        return ResponseEntity.ok(authService.login(userToLogin));
     }
 }
