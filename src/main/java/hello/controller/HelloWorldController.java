@@ -2,15 +2,17 @@ package hello.controller;
 
 
 import hello.form.ValidationBean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController("/hello")
+@RestController
+@RequestMapping(("/hello"))
 public class HelloWorldController {
 
     @PostMapping("/validate")
-    public @ResponseBody ValidationBean hello(@Valid @RequestBody ValidationBean bean){
-        return bean;
+    public ResponseEntity<ValidationBean> hello(@Valid @RequestBody ValidationBean bean){
+        return ResponseEntity.ok(bean);
     }
 }

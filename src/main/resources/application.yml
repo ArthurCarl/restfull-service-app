@@ -1,6 +1,7 @@
+
 spring:
   datasource:
-    url: jdbc:h2:mem:h2test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:./h2test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     platform: h2
     username: sa
     password: 123
@@ -26,3 +27,5 @@ spring:
 logging:
   level:
     root: debug
+server:
+  port: 8080

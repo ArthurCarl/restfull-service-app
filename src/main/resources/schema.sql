@@ -16,4 +16,4 @@ name varchar(128)
 
 
 drop table if exists user_roles;
-create table user_roles(user_id INT not null,role_id int not null);
+create table user_roles(user_id INT not null,roles_id int not null);
